@@ -35,7 +35,7 @@ export default function Navbar() {
 
             </ul>
           </div>
-          <Link to='/' className="text-xl font-semibold">Cook_Book</Link>
+          <Link to='/' className="text-xl font-semibold">COFFEE_BOOK</Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
