@@ -7,7 +7,9 @@ export default function MainLayouts() {
   return (
     <div>
       {/* Navbar */}
-      <Navbar></Navbar>
+      <div className='h-20'>
+        <Navbar></Navbar>
+      </div>
 
       <div className='min-h-[calc(100vh-300px)] w-11/12 mx-auto'>
         {/*dynamic section */}

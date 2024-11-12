@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Categories({ categories }) {
     console.log(categories)
@@ -9,15 +9,16 @@ export default function Categories({ categories }) {
                 {
                     categories.map(category => (
 
-                        <Link key={category.category}
-                            to={`/category/${category.category}`} role="tab" className="tab">
-                            {category.category}
-                        </Link>
-                    )
-                    )
+                        <NavLink key={category.category}
+                            to={`/category/${category.category}`} role="tab"
+                            className={({ isActive }) => `tab ${isActive ? 'tab-active' : ''}`}>
+                {category.category}
+            </NavLink>
+            )
+            )
                 }
 
-            </div>
         </div>
+        </div >
     )
 }

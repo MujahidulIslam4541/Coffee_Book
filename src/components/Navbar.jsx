@@ -1,10 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar backdrop-blur-xl z-50 fixed bg-white/30">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,19 +24,30 @@ export default function Navbar() {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-              <li><Link to='/'>Home</Link></li>
-            <li><Link to='/coffees'>Coffees</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
+              <li><NavLink
+                className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/'>
+                Home
+              </NavLink></li>
+
+              <li><NavLink className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/coffees'>Coffees</NavLink></li>
+
+              <li><NavLink className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/dashboard'>Dashboard</NavLink></li>
+
             </ul>
           </div>
           <Link to='/' className="text-xl font-semibold">Cook_Book</Link>
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/coffees'>Coffees</Link></li>
-            <li><Link to='/dashboard'>Dashboard</Link></li>
-           
+            <li><NavLink
+                className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/'>
+                Home
+              </NavLink></li>
+
+              <li><NavLink className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/coffees'>Coffees</NavLink></li>
+
+              <li><NavLink className={({ isActive }) => `font-semibold ${isActive ? 'text-warning' : 'hover:text-warning'}`} to='/dashboard'>Dashboard</NavLink></li>
+
           </ul>
         </div>
       </div>
